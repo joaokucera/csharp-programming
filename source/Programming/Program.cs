@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Collections;
 
 namespace Programming
 {
@@ -10,16 +11,41 @@ namespace Programming
     {
         static void Main(string[] args)
         {
-            // Tipos de Dados
-            int meuInteiro = 20;
-            char meuChar = 'a';
-            string minhaString = "palavra";
+            // MÉTODOS COM RETORNO
+            int idade = 21;
+            Console.WriteLine(MeuMetodoQueRetornaString(idade));
 
-            float meuFloat = 20.5f;
-            double meuDouble = 20.5d;
-            decimal meuDecimal = 20.5m;
+            Console.WriteLine(MeuMetodoQueRetornaString(15));
+            Console.WriteLine(MeuMetodoQueRetornaString(5));
 
-            bool meuBool = true;
+            bool ehValido = MeuMetodoQueRetornaBool(21);
+            Console.WriteLine(ehValido);
+
+            Console.ReadLine();
+        }
+
+        static string MeuMetodoQueRetornaString(int idade)
+        {
+            if (idade < 12)
+            {
+                return "Criança";
+            }
+            else if (idade > 20)
+            {
+                return "Adulto";
+            }
+
+            return "Adolescente";
+        }
+
+        static bool MeuMetodoQueRetornaBool(int idade)
+        {
+            if (idade < 21)
+            {
+                return false;
+            }
+
+            return true;
         }
     }
 }
